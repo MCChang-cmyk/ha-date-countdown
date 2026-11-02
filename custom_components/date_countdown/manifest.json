@@ -1,0 +1,14 @@
+{
+  "domain": "date_countdown",
+  "name": "Date Countdown",
+  "version": "0.1.0",
+  "config_flow": true,
+  "integration_type": "helper",
+  "iot_class": "calculated",
+  "requirements": [],
+  "codeowners": [
+    "@MCChang-cmyk"
+  ],
+  "documentation": "https://github.com/MCChang-cmyk/ha-date-countdown",
+  "issue_tracker": "https://github.com/MCChang-cmyk/ha-date-countdown/issues"
+}

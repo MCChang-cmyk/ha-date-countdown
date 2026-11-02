@@ -1,0 +1,70 @@
+{
+  "title": "Date Countdown",
+  "config": {
+    "step": {
+      "user": {
+        "title": "新增日期倒數",
+        "data": {
+          "start_date": "更換日期",
+          "duration": "使用期限",
+          "unit": "期限單位",
+          "name": "名稱"
+        }
+      }
+    },
+    "error": {
+      "invalid_settings": "請檢查名稱、日期與使用期限，計算結果須為有效日期。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "start_date": "更換日期",
+          "duration": "使用期限",
+          "unit": "期限單位"
+        }
+      }
+    },
+    "error": {
+      "invalid_settings": "請檢查名稱、日期與使用期限，計算結果須為有效日期。"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "days_remaining": {
+        "name": "剩餘天數"
+      },
+      "remaining_percentage": {
+        "name": "剩餘壽命"
+      },
+      "due_date": {
+        "name": "到期日期"
+      }
+    },
+    "date": {
+      "start_date": {
+        "name": "更換日期"
+      }
+    },
+    "button": {
+      "replace_today": {
+        "name": "今天已更換"
+      }
+    },
+    "binary_sensor": {
+      "due": {
+        "name": "已到更換日期"
+      }
+    }
+  },
+  "selector": {
+    "unit": {
+      "options": {
+        "days": "天",
+        "months": "月",
+        "years": "年"
+      }
+    }
+  }
+}

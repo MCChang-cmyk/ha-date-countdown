@@ -1,0 +1,70 @@
+{
+  "title": "Date Countdown",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add countdown",
+        "data": {
+          "start_date": "Replacement date",
+          "duration": "Lifetime",
+          "unit": "Unit",
+          "name": "Name"
+        }
+      }
+    },
+    "error": {
+      "invalid_settings": "Invalid date, name or lifetime."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "start_date": "Replacement date",
+          "duration": "Lifetime",
+          "unit": "Unit"
+        }
+      }
+    },
+    "error": {
+      "invalid_settings": "Invalid date, name or lifetime."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "days_remaining": {
+        "name": "Days remaining"
+      },
+      "remaining_percentage": {
+        "name": "Remaining life"
+      },
+      "due_date": {
+        "name": "Due date"
+      }
+    },
+    "date": {
+      "start_date": {
+        "name": "Replacement date"
+      }
+    },
+    "button": {
+      "replace_today": {
+        "name": "Replaced today"
+      }
+    },
+    "binary_sensor": {
+      "due": {
+        "name": "Replacement due"
+      }
+    }
+  },
+  "selector": {
+    "unit": {
+      "options": {
+        "days": "Days",
+        "months": "Months",
+        "years": "Years"
+      }
+    }
+  }
+}
