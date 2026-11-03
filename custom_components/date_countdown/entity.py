@@ -1,9 +1,9 @@
 """Shared entity behavior."""
-from datetime import date
 from homeassistant.helpers.entity import Entity, DeviceInfo
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.util import dt as dt_util
-from .calculator import calculate
+from .model import values
+from .manager import edit, settings
 from .const import DOMAIN
 
 class CountdownEntity(Entity):
@@ -21,13 +21,11 @@ class CountdownEntity(Entity):
 
     @property
     def settings(self):
-        return {**self.entry.data, **self.entry.options}
+        return settings(self.entry)
 
     @property
     def values(self):
-        data = self.settings
-        return calculate(date.fromisoformat(data["start_date"]),
-                         data["duration"], data["unit"], dt_util.now().date())
+        return values(self.settings, dt_util.now().date())
 
     async def async_added_to_hass(self):
         await super().async_added_to_hass()
@@ -35,5 +33,4 @@ class CountdownEntity(Entity):
             self.hass, f"{DOMAIN}_{self.entry.entry_id}", self.async_write_ha_state))
 
     def set_start_date(self, value):
-        self.hass.config_entries.async_update_entry(
-            self.entry, options={**self.entry.options, "start_date": value.isoformat()})
+        edit(self.hass, self.entry, {"start_date": value.isoformat()})

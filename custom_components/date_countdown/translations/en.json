@@ -4,30 +4,55 @@
     "step": {
       "user": {
         "title": "Add countdown",
+        "menu_options": {
+          "lifetime": "Consumable lifetime",
+          "fixed": "Fixed expiry date"
+        }
+      },
+      "lifetime": {
+        "title": "Consumable lifetime",
         "data": {
+          "name": "Name",
+          "group": "Group (optional)",
           "start_date": "Replacement date",
           "duration": "Lifetime",
           "unit": "Unit",
-          "name": "Name"
+          "reminder_days": "Reminder days"
+        }
+      },
+      "fixed": {
+        "title": "Fixed expiry date",
+        "data": {
+          "name": "Name",
+          "group": "Group (optional)",
+          "due_date": "Due date",
+          "reminder_days": "Reminder days"
         }
       }
     },
     "error": {
-      "invalid_settings": "Invalid date, name or lifetime."
+      "invalid_settings": "Check the name, date and lifetime. Replacement dates cannot be in the future."
     }
   },
   "options": {
     "step": {
       "init": {
         "data": {
+          "name": "Name",
+          "group": "Group (optional)",
           "start_date": "Replacement date",
+          "due_date": "Due date",
           "duration": "Lifetime",
-          "unit": "Unit"
+          "unit": "Unit",
+          "reminder_days": "Reminder days"
         }
       }
     },
     "error": {
-      "invalid_settings": "Invalid date, name or lifetime."
+      "invalid_settings": "Check the name, date and lifetime. Replacement dates cannot be in the future."
+    },
+    "abort": {
+      "stale_revision": "Item changed. Reopen the options and try again."
     }
   },
   "entity": {
@@ -54,7 +79,7 @@
     },
     "binary_sensor": {
       "due": {
-        "name": "Replacement due"
+        "name": "Due"
       }
     }
   },

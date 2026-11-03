@@ -1,0 +1,4 @@
+homeassistant==2026.10.4
+home-assistant-frontend==20260930.5
+pytest>=9,<10
+pytest-asyncio>=1.4,<2

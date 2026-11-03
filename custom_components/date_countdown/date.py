@@ -4,7 +4,7 @@ from homeassistant.components.date import DateEntity
 from .entity import CountdownEntity
 
 async def async_setup_entry(hass, entry, async_add_entities):
-    async_add_entities([ReplacementDate(entry)])
+    async_add_entities([ReplacementDate(entry)] if {**entry.data, **entry.options}["mode"] == "lifetime" else [])
 
 class ReplacementDate(CountdownEntity, DateEntity):
     _attr_icon = "mdi:calendar-edit"

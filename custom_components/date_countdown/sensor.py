@@ -26,5 +26,5 @@ class CountdownSensor(CountdownEntity, SensorEntity):
     @property
     def extra_state_attributes(self):
         due, remaining, percentage = self.values
-        return {**self.settings, "due_date": due.isoformat(),
+        return {"countdown_id": self.entry.entry_id, **{k: v for k, v in self.settings.items() if k != "history"}, "due_date": due.isoformat(),
                 "days_remaining": remaining, "remaining_percentage": percentage}

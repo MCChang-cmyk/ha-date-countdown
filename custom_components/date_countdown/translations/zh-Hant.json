@@ -4,30 +4,55 @@
     "step": {
       "user": {
         "title": "新增日期倒數",
+        "menu_options": {
+          "lifetime": "耗材壽命",
+          "fixed": "固定到期日"
+        }
+      },
+      "lifetime": {
+        "title": "耗材壽命",
         "data": {
+          "name": "名稱",
+          "group": "分組（選填）",
           "start_date": "更換日期",
           "duration": "使用期限",
           "unit": "期限單位",
-          "name": "名稱"
+          "reminder_days": "提前提醒天數"
+        }
+      },
+      "fixed": {
+        "title": "固定到期日",
+        "data": {
+          "name": "名稱",
+          "group": "分組（選填）",
+          "due_date": "到期日期",
+          "reminder_days": "提前提醒天數"
         }
       }
     },
     "error": {
-      "invalid_settings": "請檢查名稱、日期與使用期限，計算結果須為有效日期。"
+      "invalid_settings": "請檢查名稱、日期、使用期限；更換日期不能晚於今天。"
     }
   },
   "options": {
     "step": {
       "init": {
         "data": {
+          "name": "名稱",
+          "group": "分組（選填）",
           "start_date": "更換日期",
+          "due_date": "到期日期",
           "duration": "使用期限",
-          "unit": "期限單位"
+          "unit": "期限單位",
+          "reminder_days": "提前提醒天數"
         }
       }
     },
     "error": {
-      "invalid_settings": "請檢查名稱、日期與使用期限，計算結果須為有效日期。"
+      "invalid_settings": "請檢查名稱、日期、使用期限；更換日期不能晚於今天。"
+    },
+    "abort": {
+      "stale_revision": "資料已更新，請重新開啟選項再編輯。"
     }
   },
   "entity": {
@@ -54,7 +79,7 @@
     },
     "binary_sensor": {
       "due": {
-        "name": "已到更換日期"
+        "name": "已到期"
       }
     }
   },
